@@ -1,0 +1,110 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v3.5.30",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "Curve",
+      "rotation": [
+        0.7071068286895752,
+        0,
+        0,
+        0.7071068286895752
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Curve.001",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "TEXCOORD_0": 1,
+            "NORMAL": 2
+          },
+          "indices": 3
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 1874,
+      "max": [
+        0.07633273303508759,
+        0.0066999997943639755,
+        0.06865948438644409
+      ],
+      "min": [
+        -0.08800419420003891,
+        -0.0066999997943639755,
+        -0.06563884764909744
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1874,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1874,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 5604,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 22488,
+      "byteOffset": 0,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 14992,
+      "byteOffset": 22488,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 22488,
+      "byteOffset": 37480,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 11208,
+      "byteOffset": 59968,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "logomesh_data.bin",
+      "byteLength": 71176
+    }
+  ]
+}

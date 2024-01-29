@@ -1,0 +1,21 @@
+
+TODO
+-Olfactory Bulb
+-Olfactory Cortex
+-Insular Cortex
+-Optic Radiations
+
+ADD:
+
+
+GROUPS:
+-Brainstem
+-Basal Ganglia
+-Striatum
+-Lenticular Nucleus
+-Visual System
+-Auditory System
+-Olfactory System
+-Limbic System
+
+FIX:

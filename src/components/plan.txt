@@ -1,0 +1,16 @@
+Add:
+-button to completely remove the brain outline
+-button to switch focus between brain and brain + spinal cord
+
+Maybe add:
+-button to highlight selected feature, possibly have a blinking outline (change fill color over and over?)
+
+
+Fix:
+-Brain Explorer model needs to be based on the users screen width instead of a hardcoded number
+
+-onClick, onBlur, and onFocus are getting messed up because there are several things being rendered at one time in the same place.
+    Perhaps I need to completely unrender everything beneath something when it is clicked to avoid this.
+    Another fix would be to figure out the specifics of click events so I can specify exactly 
+ ***SOLVE: It seems that the on____ events are only getting messed up when I click off the mobile device emulator. Perhaps I can
+            simply ignore it unless it is a problem in production.

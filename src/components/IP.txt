@@ -1,0 +1,23 @@
+Patent:
+Design Patent: The unique design of neuroscope is the use of simple solid colors instead of CG textures of anatomical features. Maybe this isn't the best though so probably not design patent.
+Utility: What is special about neuroscope?
+-> It is the only website where you can interactively select and view 3D models of individual parts of human anatomy. Specifically, it is the only website
+   where you can show the targeted region of the body and view as few as none and as many as all of the individual anatomical features in that region at one
+   time. Every other website loads the entire model of the targeted region with every part rendered and individually labelled, while neuroscope initially loads 
+   only the exterior of the region and you have the option to isolate each feature without changing pages.
+
+    Unique properties of neuroscope:
+
+    -Initialization: When first accessing the page, only the surface of the target region is presented.
+
+    -Loading of anatomical features using search: The user then has the option to either load individual anatomical features, load a group of anatomical features, or load all of the anatomical features. An important
+    note is that the user has the option to load anatomical features in isolation. 
+
+    -Legend of anatomical features: When an anatomical feature is loaded, a legend appears which gives the user the ability to identify each loaded feature by color. The user also has the ability to edit
+     which anatomical features are displayed in the 3D scene from the legend or change the color of either an individual or group of displayed features. The program uniquely uses the data from
+     the legend to determine which anatomical features to load. 
+
+
+
+Trademark:
+Neuroscope is an unused trademark in the market of educational media. 
