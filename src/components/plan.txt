@@ -7,10 +7,9 @@ Maybe add:
 
 
 Fix:
--Brain Explorer model needs to be based on the users screen width instead of a hardcoded number
+X-find a way to reset user's viewport to top of page each time they navigate to different link
+    ***Perhaps make a function in each component that moves the viewport up to the top when they load (besides Navbar)
 
--onClick, onBlur, and onFocus are getting messed up because there are several things being rendered at one time in the same place.
-    Perhaps I need to completely unrender everything beneath something when it is clicked to avoid this.
-    Another fix would be to figure out the specifics of click events so I can specify exactly 
- ***SOLVE: It seems that the on____ events are only getting messed up when I click off the mobile device emulator. Perhaps I can
-            simply ignore it unless it is a problem in production.
+    
+-figure out how to keep the search glass within the search bar container
+-figure out how to make a dropdown animation for the burger menu

@@ -3,7 +3,7 @@ import useSearch from './useSearch.jsx';
 import Model from './Model.jsx'
 import Footer from "./Footer";
 import colorArray from './colorArray.jsx';
-
+import NavBar from './NavBar.jsx';
 
 //take in a width variable that determines how big the models will be 
 
@@ -29,6 +29,7 @@ function BrainExplorer(){
     const searchResultItemRef = useRef(null);
     const isMobile = window.innerWidth <= 1100;
 
+    
     const handleSearchFocus = () => {
         if (isMobile){
             setShowLegend(false);
@@ -38,6 +39,11 @@ function BrainExplorer(){
         setShowMobileButtons(false);
     };
   
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo(0, 0);
+    }, []);
+
 
     const handleSearchBlur = () => {
         if (isMobile){
@@ -181,75 +187,81 @@ function BrainExplorer(){
 
     if (isMobile){ //mobile rendering
         return (
-            <div>
-                <img className={`mobile-search-glass ${searchBarVisible ? 'slide' : ''}`} src='/svg/standard-handle.svg' onClick={handleSearchGlassClick}></img>
-                <div className={`mobile-search-bar ${searchBarVisible ? 'visible' : ''}`}>
-                    <input
-                    ref={searchInputRef}
-                    type="text"
-                    placeholder={placeholder}
-                    onFocus={handleSearchFocus}
-                    onBlur={handleSearchBlur}
-                    onChange={handleInputChange}
-                    onKeyDown={handleKeyDown}
-                    value={searchQuery}
-                    />
+                <>
+                 {!searchBarVisible && (
+                 <NavBar />
+                 )}
+                    <div>
+                        <img className={`mobile-search-glass ${searchBarVisible ? 'slide' : ''}`} src='/svg/standard-handle.svg' onClick={handleSearchGlassClick}></img>
+                        <div className={`mobile-search-bar ${searchBarVisible ? 'visible' : ''}`}>
+                            <input
+                            ref={searchInputRef}
+                            type="text"
+                            placeholder={placeholder}
+                            onFocus={handleSearchFocus}
+                            onBlur={handleSearchBlur}
+                            onChange={handleInputChange}
+                            onKeyDown={handleKeyDown}
+                            value={searchQuery}
+                            />
+                    </div>
+                    { showResults && (
+                        <>
+                            <div className='mbs-hide-navbar'></div>
+                            <div className='mbs-hide-top'></div>
+                            <div className='mobile-search-results'> {/*showResultsInstant hides the results in the 100ms before the div unrenders */}
+                                {features.map((feature) => (
+                                    <div className="mobile-search-result-item" key={feature.id} onClick={() => handleFeatureClick(feature)}>
+                                        {feature.name}
+                                    </div>
+                                ))}
+                            </div>
+                        </>
+                    )}
+
+                    { showLegend && (
+                        <div className='mobile-legend'>
+                            {legend.map((legendItem) => {
+                                return (
+                                    <div className='mobile-legend-item' key={legendItem.feature.id} onClick={() => handleFeatureClick(legendItem.feature)}>
+                                        {legendItem.feature.name}
+                                        <div className="mobile-legend-circle" style={{ backgroundColor: legendItem.hashcolor, verticalAlign: 'middle', marginBottom: '5px'}}></div>
+
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
+                    { showDescription && (
+                        <div className={`mobile-feature-description ${showMobileInfo ? 'expanded' : ''}`}>
+                            <div className='mfd-header'>
+                                <img className={`mfd-arrow ${showMobileInfo ? 'expanded' : ''}`} src={showMobileInfo ? '/svg/down-arrow.svg' : '/svg/up-arrow.svg'} onClick={handleMobileInfoClick}></img>
+                                <h1>{currentFeature.name}</h1>
+                            </div>
+                            <div className='mfd-info'>
+                                <b>Primary Function:</b>
+                                <p>{currentFeature.description}</p>
+                            </div>
+                        </div>
+                    )}
+                    <div className="content">
+                        <Model 
+                        featurePath={legendExport}
+                        transparentModel={transparentModel}
+                        isMobile={true}
+                        />
+                    </div>
+                    { showMobileButtons && (
+                        <div className='mobile-button-box'>
+                            <img src={transButton} alt="Transparency" className="trans-button" onClick={handleTransButtonClick}/>
+                            {showDescription && (
+                                <img src="/svg/trash3-fill.svg" alt="X" className="kill-button" onClick={handleKillButtonClick}/>
+                            )}
+                        </div>
+                    )}
+
                 </div>
-                { showResults && (
-                    <>
-                        <div className='mbs-hide-top'></div>
-                        <div className='mobile-search-results'> {/*showResultsInstant hides the results in the 100ms before the div unrenders */}
-                            {features.map((feature) => (
-                                <div className="mobile-search-result-item" key={feature.id} onClick={() => handleFeatureClick(feature)}>
-                                    {feature.name}
-                                </div>
-                            ))}
-                        </div>
-                    </>
-                )}
-
-                { showLegend && (
-                    <div className='mobile-legend'>
-                        {legend.map((legendItem) => {
-                            return (
-                                <div className='mobile-legend-item' key={legendItem.feature.id} onClick={() => handleFeatureClick(legendItem.feature)}>
-                                    {legendItem.feature.name}
-                                    <div className="mobile-legend-circle" style={{ backgroundColor: legendItem.hashcolor, verticalAlign: 'middle', marginBottom: '5px'}}></div>
-
-                                </div>
-                            );
-                        })}
-                    </div>
-                )}
-                { showDescription && (
-                    <div className={`mobile-feature-description ${showMobileInfo ? 'expanded' : ''}`}>
-                        <div className='mfd-header'>
-                            <img className={`mfd-arrow ${showMobileInfo ? 'expanded' : ''}`} src={showMobileInfo ? '/svg/down-arrow.svg' : '/svg/up-arrow.svg'} onClick={handleMobileInfoClick}></img>
-                            <h1>{currentFeature.name}</h1>
-                        </div>
-                        <div className='mfd-info'>
-                            <b>Primary Function:</b>
-                            <p>{currentFeature.description}</p>
-                        </div>
-                    </div>
-                )}
-                <div className="content">
-                    <Model 
-                    featurePath={legendExport}
-                    transparentModel={transparentModel}
-                    isMobile={true}
-                    />
-                </div>
-                { showMobileButtons && (
-                    <div className='mobile-button-box'>
-                        <img src={transButton} alt="Transparency" className="trans-button" onClick={handleTransButtonClick}/>
-                        {showDescription && (
-                            <img src="/svg/trash3-fill.svg" alt="X" className="kill-button" onClick={handleKillButtonClick}/>
-                        )}
-                    </div>
-                )}
-
-            </div>
+            </>
         );
     }
 

@@ -1,14 +1,23 @@
+import React, { useEffect } from 'react';
 import HomeSplash from "./HomeSplash";
 import Footer from "./Footer";
 import { Link } from 'react-router-dom';
+import NavBar from './NavBar';
 
 function Home () {
 
     const isMobile = window.innerWidth <= 830;
 
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo(0, 0);
+    }, []);
+
     if (isMobile) {
         return (
             <>
+                <NavBar />
+                
                 <div className="home-page-wrapper">
                         <h1>Neuroanatomy simplified.</h1>
                         <Link to="/brainexplorer" className="card-link">
@@ -32,6 +41,8 @@ function Home () {
     }
     return (
         <div>
+            <NavBar />
+            
             <h1 className="home-title">Neuroanatomy simplified.</h1>
 
             <div className="intro-card-container">

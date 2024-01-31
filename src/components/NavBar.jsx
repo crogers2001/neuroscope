@@ -29,9 +29,9 @@ function NavBar () {
         </nav>
         {showMobileMenu && (
           <div className={`hamburger-menu ${showMobileMenu ? 'expanded' : ''}`} onClick={handleMobileMenuClick}>
-              <Link to="/brainexplorer" className='mobile-nav-link'><div className='hamburger-menu-item'>Brain Explorer</div></Link>
-              <Link to="/about" className='mobile-nav-link'><div className='hamburger-menu-item'>About</div></Link>
-              <Link to="/legal" className='mobile-nav-link'><div className='hamburger-menu-item'>Legal</div></Link>
+              <Link to="/brainexplorer" className='mobile-nav-link'><div className='hamburger-menu-item' onClick={handleMobileMenuClick}>Brain Explorer</div></Link>
+              <Link to="/about" className='mobile-nav-link'><div className='hamburger-menu-item' onClick={handleMobileMenuClick}>About</div></Link>
+              <Link to="/legal" className='mobile-nav-link'><div className='hamburger-menu-item' onClick={handleMobileMenuClick}>Legal</div></Link>
               <div className='hamburger-menu-bottom'></div>
 
           </div>
