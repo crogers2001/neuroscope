@@ -267,7 +267,7 @@ function BrainExplorer(){
 
     return ( //desktop rendering
         <div>
-
+            <NavBar />
             <div className='legend'>
                 {legend.map((legendItem) => {
                             return (

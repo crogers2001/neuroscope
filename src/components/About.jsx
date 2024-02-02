@@ -11,7 +11,7 @@ function About () {
 
                 <div className="about-author">        
                     <img className="about-logo" src={logo} alt="logo" />
-                    <h1>neuroscope v.2.1</h1>
+                    <h1>neuroscope v.2.2</h1>
                     <p>Neuroscope is an educational visualization tool used to learn neuroanatomy which utilizes a manually parcellated 3D model of the human brain. This brain model is based on an fMRI scan of a 
                         human brain which was converted to a 3D model using a convolutional neural network.</p>
                     <p> This is an early release version. New functionality and anatomical features are being continuously added.</p>
@@ -23,7 +23,9 @@ function About () {
                     
                     <p><strong>v.2.0: </strong>Initial release of mobile browser version. (1/29/2024) </p>
 
-                    <p><strong>v.2.1: </strong>Various GUI bug fixes. (1/30/2024) </p>
+                    <p><strong>v.2.1: </strong>Various mobile GUI bug fixes. (1/30/2024) </p>
+
+                    <p><strong>v.2.2: </strong>Various mobile and desktop GUI bug fixes. (2/1/2024) </p>
                 </div>
 
                 <Footer />

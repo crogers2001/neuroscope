@@ -519,7 +519,7 @@ body::-webkit-scrollbar{
 .mobile-search-glass {
   width: 40px;
   height: auto;
-  position: absolute;
+  position: fixed;
   left: 5vw;
   top: 12vh;
   z-index: 97;
@@ -535,7 +535,7 @@ body::-webkit-scrollbar{
   top: 10vh; /*This centers the search-glass on real mobile devices but not the DevTools device emulator*/
   width: 0;
   left: 5vw;
-  position: absolute;
+  position: fixed;
   background-color: #252525;
   border-radius: 10px;
   padding: 15px 0 13px 0;
@@ -569,14 +569,14 @@ body::-webkit-scrollbar{
 
 .mbs-hide-top {
   z-index: 40;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   background-color: black;
   height: 14.5vh;
 }
 .mobile-search-results {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 14vh;
   width: 100%;
@@ -601,7 +601,7 @@ body::-webkit-scrollbar{
 
 .mobile-legend {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   top: 19vh;
   left: 5vw;
   max-height: 20vh;
@@ -638,13 +638,13 @@ body::-webkit-scrollbar{
 }
 
 .mobile-feature-description.expanded {
-  top: 60vh;
+  top: 50vh;
 }
 
 .mobile-button-box {
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   right: 5vw;
   top: 11.5vh;
