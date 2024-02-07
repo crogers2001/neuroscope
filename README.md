@@ -4,4 +4,8 @@ Explore the human brain on your desktop or mobile device: https://neuroscope.app
 
 ## Demo
 
-![demo](https://www.youtube.com/watch?v=qzqeq8s6rgw)
+
+
+https://github.com/crogers2001/neuroscope/assets/121364560/c3d794f4-0676-4125-bd1d-bc873bcfb8c5
+
+
